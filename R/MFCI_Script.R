@@ -3,7 +3,7 @@
 get_mfci<-function(transaction_list_filepath,items_list_filepath,including_absence,top_k,correlation_type,
                    continuity_correction,correlation_threshold,singleton){
   rJava::.jinit(".")
-  rprojroot::is_r_package
+  root<-rprojroot::is_r_package
   rJava::.jaddClassPath(root$find_file("MFCI.jar"))
   cs<- rJava::.jnew("processing.CorrelationSearch")
   t<-rJava::.jnew("java.lang.String", transaction_list_filepath)
@@ -31,7 +31,7 @@ get_pairs<-function(transaction_list_filepath,items_list_filepath,itemset,includ
                    continuity_correction,correlation_threshold,detail)
   {
   rJava::.jinit(".")
-  rprojroot::is_r_package
+  root<-rprojroot::is_r_package
   rJava::.jaddClassPath(root$find_file("MFCI.jar"))
   cs<- rJava::.jnew("processing.CorrelationSearch")
   t<-rJava::.jnew("java.lang.String", transaction_list_filepath)
