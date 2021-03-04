@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: .
+Created-By: 15 (Oracle Corporation)
+Main-Class: MFCI.jar
+
