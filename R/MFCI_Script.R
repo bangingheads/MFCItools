@@ -2,6 +2,8 @@
 #install.packages('purrr')
 #library(purrr)
 #library(rJava)
+
+#' @export
 get_mfci<-function(transaction_list_filepath,items_list_filepath,including_absence,top_k,correlation_type,
                    continuity_correction,correlation_threshold,singleton){
   library(purrr)
@@ -29,6 +31,7 @@ get_mfci<-function(transaction_list_filepath,items_list_filepath,including_absen
   .jcall(cs,"Ljava/lang/String;", 'ShowMFCI', ar,topk,cor,cont,thresh,singleK)
 }
 
+#' @export
 get_pairs<-function(transaction_list_filepath,items_list_filepath,itemset,including_absence,top_k,correlation_type,
                    continuity_correction,correlation_threshold,detail)
   {
@@ -54,6 +57,7 @@ get_pairs<-function(transaction_list_filepath,items_list_filepath,itemset,includ
 
 }
 
+#' @export
 mfci_setup<- function(){
   trans<- readline("What is the name of the transaction file? ")
   it<- readline("What is the name of the items file? ")
@@ -67,11 +71,14 @@ mfci_setup<- function(){
   return(gm)
 }
 
+
+#' @export
 mfci<-function(){
   cat(mfci_setup())
 }
 
 
+#' @export
 pairs_setup<-function(){
   trans<- readline("What is the name of the transaction file? ")
   it<- readline("What is the name of the items file? ")
@@ -86,6 +93,7 @@ pairs_setup<-function(){
 
 }
 
+#' @export
 pairs<-function(){
   cat(pairs_setup())
   }
