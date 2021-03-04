@@ -1,2 +1,0 @@
-javac -cp . *.java
-pause
